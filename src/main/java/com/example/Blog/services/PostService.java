@@ -2,8 +2,8 @@ package com.example.Blog.services;
 
 import java.util.List;
 
-import com.example.Blog.entities.Post;
 import com.example.Blog.payloads.PostDto;
+import com.example.Blog.payloads.PostResponse;
 
 public interface PostService {
 	
@@ -18,7 +18,7 @@ public interface PostService {
 	void deletePost(Integer postId);
 	
 	//Get all posts
-	List <PostDto>getAllPost();
+	PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 	
 	//get single post
 	
@@ -32,6 +32,6 @@ public interface PostService {
 	List<PostDto> getPostsByUser(Integer userId);
 	
 	//Search posts
-	List<Post> searchPosts(String keyword);
+	List<PostDto> searchPosts(String keyword);
 
 }
